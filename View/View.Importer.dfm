@@ -1,0 +1,364 @@
+object ViewImporter: TViewImporter
+  Left = 0
+  Top = 0
+  Caption = 'Importer'
+  ClientHeight = 433
+  ClientWidth = 680
+  Color = clWindow
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlMain: TPanel
+    Left = 158
+    Top = 0
+    Width = 522
+    Height = 433
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWindow
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 0
+    ExplicitWidth = 630
+    ExplicitHeight = 425
+    object cardPanelImporter: TCardPanel
+      Left = 0
+      Top = 0
+      Width = 522
+      Height = 433
+      Align = alClient
+      ActiveCard = cardImporter
+      TabOrder = 0
+      ExplicitLeft = 136
+      ExplicitTop = 112
+      ExplicitWidth = 300
+      ExplicitHeight = 200
+      object cardNewLayout: TCard
+        Left = 1
+        Top = 1
+        Width = 520
+        Height = 431
+        CardIndex = 0
+        TabOrder = 0
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+      end
+      object cardListLayout: TCard
+        Left = 1
+        Top = 1
+        Width = 520
+        Height = 431
+        Caption = 'cardListLayout'
+        CardIndex = 1
+        TabOrder = 1
+        ExplicitLeft = 3
+        object pnlListLayouts: TPanel
+          Left = 0
+          Top = 0
+          Width = 520
+          Height = 33
+          Align = alTop
+          BevelKind = bkFlat
+          BevelOuter = bvNone
+          TabOrder = 0
+        end
+      end
+      object cardHome: TCard
+        Left = 1
+        Top = 1
+        Width = 520
+        Height = 431
+        Caption = 'cardHome'
+        CardIndex = 2
+        TabOrder = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+        object imgHome: TImage
+          Left = 0
+          Top = 0
+          Width = 520
+          Height = 431
+          Align = alClient
+          Center = True
+          Picture.Data = {
+            0954506E67496D61676589504E470D0A1A0A0000000D49484452000000640000
+            0064080600000070E29554000000017352474200AECE1CE90000000467414D41
+            0000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000009
+            F64944415478DAED9D097013D71D877F6F65430D041BCA1D082E474B38C26420
+            DC061C8EF8A02D972909054A0B090453868496812949682025A1601C2001C66E
+            4263AE41A6498C6C832F9C86701570CC11520E03C56030972FF021EDEB7B5645
+            2459B656DA95BD1DDE37E361F5F4F6BFABF7F99D2BFC0804BA8234F40D081C11
+            42748610A2337C26242A2AAAD1DD12DA4DF2A3ED09252D1BFA832A4196E9234A
+            6819A1FEF90F6E07E69D38B1B5AABEEF417321A111938648842C04681801695E
+            DF1F4843CCA0F43825C89425ECCC4A4A3C5B1F17D54C4864E42B2D2A68C55610
+            32B93E6EBCBEA1947ECD8A6B7546B2D1E4CBEB68226454E4C42EAC36A4B0703F
+            AD9FE2693828C57E8301D107928C177D115FB590D1A3A3026963F99F4C489FFA
+            2F9E0682D2525674AFA7271B3FD33AB47A211193E35994DF3AA7377FEA29840C
+            1D88E0CECFC0DFDFBFBE8ACA63EEDCBD8B849D4687B44E1D9F66652EE37AFECD
+            3ACFA5A0AB324C89CBAB0F3542959017C326F72412CD2584181CD2470EC38279
+            B3D1AC6953CD0B506BF2AE5CC3ABD16F3AA44D8D1A8FDFCD9C869B05B7604A49
+            8329351DA565652ECF67525633294BB5BA1F554246474C5ACB3AF137ECD3860E
+            1E80B7972D66C9FF1F539CBA84D8282A2EC196B86D48CFFA8A77EE358350CCD0
+            AAF952556AA322265D6005DFCDF69A374D09F19BD0B2650BDF96A28628116223
+            2D331BEB3EDC0CB3D9ECF806EB532403795E8B8EDE6B216161618DCD8666E5F6
+            6903FA3F8F55EF2CF36D096A8C274238274EE5E24F2BFE52530A686ABA29315C
+            EDFD782DE4A5977E156CF1B3E4D9A74DFC6524E6CDF98DAFCACE275CB97A0D73
+            E62B17C2D9C7FA95D84D5B6BA453C863324C7BD3D5DC8FD74246854FEE4324E4
+            7AF241F4C8FD074598F2EBD90E69E3C2C760E1FC57EB3CEFED951FE09B23C71D
+            13290EB2BE2454CDFD3CF14278271D3EFE65582C96C769DDBB76C147B1EFD779
+            DEEDC23B9839678173D3452D1643F7ACD4DD97BCBD9F275E0867D11F97E3CCB9
+            F30E69EBDEFF33FAF47AB6CEF33E58B7B1BAA3778092A5E9C97B567B7B2F4208
+            C3F88F246C89FFBB435A87F6EDB07ECD4AB4080AACF5BCD367BFC31B4BDE7248
+            63152E2323D938DADB7B11421865650F316376348A4B4A1CD2DBB46E85D75F9B
+            8521035F7039AF329B2D98307526CACB2BEC5269111B6D05797B2F42C8FFF8D2
+            B41F1B3E8E73F95E10AB25C19D3B552F073973322717A5A58EB37859F26B9799
+            B4EB9637F72184D8B12666130E641C541D87CA782E23C578DA9B7385103B7813
+            B471735CF5DA951A28C1908C7DC6C3DE9C2B84B8202BFB6BC47DBABD7A68EB29
+            14B458AA0CE890969650E6F1C910426AA5B2B20A878E1CC36136F9BB78F90A0A
+            EFDC71EABC6BC24658E7258AF96929C64C6FAF2B8468049B609E9624E939B571
+            84108D1042748610A23384109D2184E808FEEC3D352DB360FBEEBD4BCCA5853B
+            B2B3B3CDDEC6124254C265BC16BD188FCAAD0F4F29B033C3647CC5DB7842884A
+            76EDF91CF1DBB6DB27513F0BDAA6A61A0BBD892784A884CBE052EC116B590D88
+            10A23384109D2184E80C21446708213A4308D1194288CE1042748610A2338410
+            9D2184E80C21446708213A4308D1194288CE1042748610A23384109D91B0CB88
+            6D09BB1DD22C540ECE4ADE7BD59B7842884A2E5CBA8CE8454B21CB72F56B0A7A
+            22C394D8DFDB78428806E4E49E4192E9C0FDEC4387B7FA5BB0D6DB6F9C708410
+            8D10DF5CD4194288CE1042748610A23384109D2184E80C21446708213A430869
+            402C14B854049CBB07DC7E081455F21F6A2EAB443E21B841290A08C521D90FFB
+            628749DF7B125B08F180C24740D675E054215061517812A55CC846F8233E6688
+            F4C85D76214401661948B90A7C956FAD1D5E41E9655942746C889452573621C4
+            0D77CB814FCE0137BCFACB254EB08E8612ACCB2F204BF64C212EEB9810520705
+            AC7FD87C1A28AED43830A5C6E63F26D356F42635220B21B570BF02D8F02DF0A0
+            427D2CD7D0ED3121643A08716804851017F07EE2C31CE03FA5CAF20F6E0F843E
+            0D94B346683BEBC26F3D5478214A17C48C9036DA2709212E38700D4855F80036
+            B423F0F39FFCF0DAC206002BFFC586C10A6A16052D3750F45C3B427AFC07A985
+            1027787FF1DE71A052769FB76F2B60460F56884EA5788F0D0462597357A2A4EF
+            61FD09AB2551B697428813FBD8EF6AE675F7F9B88CE94C86544B09F209E3A6D3
+            EEA5B07197CC623CBB6EB8F46FFE5A0871E2DD63D60EBD2EDCC9B0E18194B7D6
+            8F90DEE5C742881D37D95C63CDC9BAF32895614391144A8FB2666B103F1442EC
+            E04DD5BEBCDADFF754860D775278B3652168B761B8542884D8B1FB0270B4C0F5
+            7BDD8280B9BD3D976183CFF4D7E75897615C42E8E09810E988106247DC59EB0A
+            AE2B66F7027A3AED57CA0BF73A9BAB043B6D9FC96338E7E57CFA1D905BCB5F9E
+            95653A2976A4B45708B183FF065F2B71FDDEB49F01FDDAFCF09ACBF8DB39A06B
+            202B8B4E8E7937B221EF0BED80816D1DD3B79E01CEDFAFE5E294CE65FDC81621
+            C48E8F593B7FE181EBF75A0700F3FA00418D81B22A2081CDC8BF67851B195C53
+            085F72B9520C8CEF0A8474B0A6E514029F9DAF637F3D994E8B1929ED1042ECE0
+            857CF276EDEF3732006D02ACCF456CCF436A1392576C3D6EF923C05F72BF9CC2
+            3AF6516CE89B2984D89194677D00E509EE84284596680FFE745108B18377C671
+            1EEE09AD8510563B6EAC1F4E3AF2955F21C48E2AD6512F3FAC6C1DCB86363584
+            C6C50C97E6F0A3277EDB3C67B6B1A1E9B71E6C8AA0510D19C7FA8FEA6DC19FF8
+            8D259DB95CC486ADB9CAF3AB154241CF0786905E2B08A9AE979A6EBDDAA8913F
+            767CB2198181CDD5846D70EA9A203A13D61918FB8C635ACC29E50FB7988509B1
+            C3C9E3FFA4A86E73E2C8C9B1EC9FDFDBA78D0B1F8B85F3E7D443B1F90EFEC586
+            B527AD4F00DDD13DC83A3FB1C11FF9AE3AAEF0DB29947ECE268313EC93540919
+            1B19D54F063D6E1F87EF66366BFA54BC3C6562FD96A2C6B89DC8D93188CDCA07
+            B05979299B30265FB17E39C21DACA9BA48FC30306688E4501755EFB1CD9AADBD
+            4CC204E7F4A18306A07FBFBE4C90547FA5E886264D02D0B7774FC5BB59F33949
+            529EA2AC1E426FC1826131A1528DDDA5550B19FD8BA91DA8C57C8A056AA33656
+            7DC0A5FCF5BD77D0BD5B1745F90F17008917F9CA8636D76723AA4BACFB0E7325
+            83A3C92EF46322260EA72026561D9A69546E3E65ECA891F8C3A2F98AF3F37529
+            BEAC72AF5CF129AEA174A7B931E66E1824D53A06D34408674CC4A4819410233B
+            ECA8554CDF41E3D34D89B33D3963D13772003563113F2420AD3CBB1C3DCA2AD8
+            32BE56E52EAB6642386161D39A57192AF84464965E9B305630B76589BE989594
+            E8E122899537F7CB4D69131221CB741CFB8CE1AC5568EDFA4234875DCBC4F27C
+            C94652C794C6D754880D3E69940D013D2C540A960869E48B6B7803855C5CE567
+            399AFDC5170FD447E30129597C106D2B0DB48D01E8C0FA998730E0565515C9FF
+            2894289C8938E2132102EF1142748610A23384109DF15FCC0DA9B07AD3528A00
+            00000049454E44AE426082}
+          ExplicitLeft = 80
+          ExplicitTop = 64
+          ExplicitWidth = 105
+          ExplicitHeight = 105
+        end
+      end
+      object cardImporter: TCard
+        Left = 1
+        Top = 1
+        Width = 520
+        Height = 431
+        CardIndex = 3
+        TabOrder = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+        object gbArquivo: TGroupBox
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 514
+          Height = 46
+          Align = alTop
+          Caption = 'Arquivo'
+          TabOrder = 0
+          ExplicitWidth = 624
+          object btnAbrirArquivo: TSpeedButton
+            AlignWithMargins = True
+            Left = 486
+            Top = 18
+            Width = 23
+            Height = 23
+            Align = alRight
+            OnClick = btnAbrirArquivoClick
+            ExplicitLeft = 184
+            ExplicitTop = 24
+            ExplicitHeight = 22
+          end
+          object edtArquivo: TEdit
+            AlignWithMargins = True
+            Left = 5
+            Top = 18
+            Width = 475
+            Height = 23
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 253
+            ExplicitHeight = 21
+          end
+        end
+        object Button2: TButton
+          Left = 5
+          Top = 55
+          Width = 75
+          Height = 25
+          Caption = 'Import'
+          TabOrder = 1
+          OnClick = Button2Click
+        end
+        object pnlStatus: TPanel
+          Left = 0
+          Top = 390
+          Width = 520
+          Height = 41
+          Align = alBottom
+          BevelOuter = bvNone
+          Color = clWindow
+          ParentBackground = False
+          TabOrder = 2
+          ExplicitLeft = 2
+          object lblStatus: TLabel
+            Left = 0
+            Top = 0
+            Width = 520
+            Height = 13
+            Align = alTop
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ExplicitWidth = 4
+          end
+          object pbStatus: TProgressBar
+            Left = 0
+            Top = 13
+            Width = 520
+            Height = 28
+            Align = alClient
+            TabOrder = 0
+            ExplicitLeft = 2
+            ExplicitTop = 19
+          end
+        end
+      end
+    end
+  end
+  object svMenu: TSplitView
+    Left = 0
+    Top = 0
+    Width = 121
+    Height = 433
+    BorderWidth = 1
+    BorderStyle = bsSingle
+    Color = clWindow
+    OpenedWidth = 200
+    Placement = svpLeft
+    TabOrder = 1
+    object SpeedButton2: TSpeedButton
+      Left = 1
+      Top = 65
+      Width = 115
+      Height = 32
+      Align = alTop
+      Caption = 'Importer'
+      Margin = 2
+      OnClick = SpeedButton2Click
+      ExplicitTop = 63
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 1
+      Top = 33
+      Width = 115
+      Height = 32
+      Align = alTop
+      Caption = 'Layout list'
+      Margin = 2
+      OnClick = SpeedButton3Click
+      ExplicitTop = 32
+    end
+    object SpeedButton4: TSpeedButton
+      Left = 1
+      Top = 1
+      Width = 115
+      Height = 32
+      Align = alTop
+      Caption = 'Home'
+      Margin = 2
+      OnClick = SpeedButton4Click
+    end
+  end
+  object pnlExpand: TPanel
+    Left = 121
+    Top = 0
+    Width = 37
+    Height = 433
+    Align = alLeft
+    BevelKind = bkFlat
+    BevelOuter = bvNone
+    BorderWidth = 1
+    Color = clWindow
+    ParentBackground = False
+    TabOrder = 2
+    object imgExpand: TImage
+      Left = 1
+      Top = 1
+      Width = 31
+      Height = 427
+      Align = alClient
+      Center = True
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
+        00200806000000737A7AF4000000017352474200AECE1CE90000000467414D41
+        0000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000000
+        E84944415478DA63641860C038EA8041E7800DFB8EFE87B0FE2F0B70B289A686
+        251BF61D590AB42A0AC40E70B246B173D401A30E187500490E909FFAD9F16136
+        EF7E7C966153431507284EFD1CF39FE1FFDC07D97CECF81CA030F5D34F4606C6
+        E4FBD9BC4BA8E600C5A99FAA815433032323E3FD2C5EBCA5A7E2B4CF4077FE07
+        99517B3F9BAF952207F41FB48E7F24FE651A90938AA4248C013F5885C49E2DF7
+        9227ABD0FEE842921DF0F71FC3AA929BBABC405F7B325002FEFFDFDEA37EF933
+        3313C4E143C701031E058322110E9A6C0803035A105102461D30EA80510790E4
+        007A8351070CB803002223423010233B390000000049454E44AE426082}
+      OnClick = imgExpandClick
+      ExplicitLeft = 16
+      ExplicitTop = 144
+      ExplicitWidth = 105
+      ExplicitHeight = 105
+    end
+  end
+  object odTextFile: TOpenTextFileDialog
+    Left = 568
+    Top = 56
+  end
+end

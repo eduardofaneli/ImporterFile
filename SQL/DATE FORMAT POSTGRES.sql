@@ -1,0 +1,2 @@
+SHOW DATESTYLE;
+SET datestyle TO ISO, DMY;
