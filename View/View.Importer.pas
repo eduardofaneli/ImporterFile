@@ -41,7 +41,6 @@ type
     procedure SpeedButton4Click(Sender: TObject);
     procedure imgExpandClick(Sender: TObject);
   private
-    FFile: TStringList;
     { Private declarations }
   public
     { Public declarations }
@@ -69,12 +68,11 @@ end;
 procedure TViewImporter.Button2Click(Sender: TObject);
 var
   importer: IControlImporter;
-  line: string;
 begin
   try
     if FileExists(Trim(edtArquivo.Text)) then
     begin
-      importer := TControlImporter.new();
+      importer := TControlImporter.new('SISA');
       importer.FileImport.LoadFromFile(Trim(edtArquivo.Text), TEncoding.UTF8);
       importer.LabelStatus := lblStatus;
       importer.ProgressBar := pbStatus;

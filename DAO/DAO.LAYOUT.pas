@@ -13,13 +13,13 @@ type
     procedure SetIdentifier(const Value: string);
     function getLayoutTemplate(): TList<IModelLayoutTemplate>;
     function getLayoutInformation(): IModelLayoutName;
-    function insertRow(const ALayoutTemplate: TList<IModelLayoutTemplate>): IDAOLayout;
+    function insertRow(const ALayoutInformation: IModelLayoutName; const ALayoutTemplate: TList<IModelLayoutTemplate>): IDAOLayout;
     property Identifier: string read GetIdentifier write SetIdentifier;
   end;
 
   TDAOLayout = class(TInterfacedObject, IDAOLayout)
   protected
-    function generateSQL(const ALayoutTemplate: TList<IModelLayoutTemplate>): string;
+    function generateSQL(const ALayoutInformation: IModelLayoutName; const ALayoutTemplate: TList<IModelLayoutTemplate>): string;
   private
     FIdentifier: string;
     function GetIdentifier: string;
@@ -28,7 +28,7 @@ type
     class function new(const AIdentifier: string): IDAOLayout;
     function getLayoutTemplate(): TList<IModelLayoutTemplate>;
     function getLayoutInformation(): IModelLayoutName;
-    function insertRow(const ALayoutTemplate: TList<IModelLayoutTemplate>): IDAOLayout;
+    function insertRow(const ALayoutInformation: IModelLayoutName; const ALayoutTemplate: TList<IModelLayoutTemplate>): IDAOLayout;
     property Identifier: string read GetIdentifier write SetIdentifier;
   end;
 
@@ -40,9 +40,8 @@ uses
 
 { TDAOLayout }
 
-function TDAOLayout.generateSQL(const ALayoutTemplate: TList<IModelLayoutTemplate>): string;
+function TDAOLayout.generateSQL(const ALayoutInformation: IModelLayoutName; const ALayoutTemplate: TList<IModelLayoutTemplate>): string;
 var
-  layoutInformation: IModelLayoutName;
   sql: TStringBuilder;
   I: Integer;
   valueField: string;
@@ -50,12 +49,11 @@ begin
   try
     sql := TStringBuilder.Create;
     try
-      layoutInformation := getLayoutInformation();
       sql.Append('INSERT INTO ')
          .Append('"')
-         .Append(layoutInformation.owner)
+         .Append(ALayoutInformation.owner)
          .Append('".')
-         .Append(layoutInformation.table)
+         .Append(ALayoutInformation.table)
          .Append('(');
 
       for I := 0 to Pred(ALayoutTemplate.Count) do
@@ -112,6 +110,9 @@ begin
       qryLayoutName.SQL.Add('where ln.identifier = :identifier');
       qryLayoutName.ParamByName('identifier').AsString := Identifier;
       qryLayoutName.Open();
+
+      if qryLayoutName.Eof then
+        raise Exception.Create(Format('Não foi encontrado nenhum layout com o identificador: %s', [Identifier]));
 
       Result := TModelLayoutName.new();
       Result.name := qryLayoutName.FieldByName('name').AsString;
@@ -176,7 +177,7 @@ begin
   end;
 end;
 
-function TDAOLayout.insertRow(const ALayoutTemplate: TList<IModelLayoutTemplate>): IDAOLayout;
+function TDAOLayout.insertRow(const ALayoutInformation: IModelLayoutName; const ALayoutTemplate: TList<IModelLayoutTemplate>): IDAOLayout;
 var
   qryInsert: TFDQuery;
 begin
@@ -184,7 +185,7 @@ begin
     qryInsert := TFDQuery.Create(nil);
     try
       qryInsert.Connection := TControlMain.getInstance().database.connection;
-      qryInsert.SQL.Text := generateSQL(ALayoutTemplate);
+      qryInsert.SQL.Text := generateSQL(ALayoutInformation, ALayoutTemplate);
       qryInsert.ExecSQL;
       qryInsert.Connection.Commit;
     except
@@ -201,7 +202,6 @@ begin
     FreeAndNil(qryInsert);
     Result := Self;
   end;
-
 end;
 
 class function TDAOLayout.new(const AIdentifier: string): IDAOLayout;

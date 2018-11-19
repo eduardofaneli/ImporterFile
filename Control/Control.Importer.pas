@@ -15,21 +15,27 @@ type
     function GetProgressBar: TProgressBar;
     procedure SetLabelStatus(const Value: TLabel);
     procedure SetProgressBar(const Value: TProgressBar);
+    function GetLayoutIdentifier: string;
+    procedure SetLayoutIdentifier(const Value: string);
     property FileImport: TStringList read GetFileImport write SetFileImport;
     property ProgressBar: TProgressBar read GetProgressBar write SetProgressBar;
     property LabelStatus: TLabel read GetLabelStatus write SetLabelStatus;
+    property LayoutIdentifier: string read GetLayoutIdentifier write SetLayoutIdentifier;
   end;
   TControlImporter = class(TInterfacedObject, IControlImporter)
   private
     FFileImport: TStringList;
     FProgressBar: TProgressBar;
     FLabelStatus: TLabel;
+    FLayoutIdentifier: string;
     function GetFileImport: TStringList;
     procedure SetFileImport(const Value: TStringList);
     function GetLabelStatus: TLabel;
     function GetProgressBar: TProgressBar;
     procedure SetLabelStatus(const Value: TLabel);
     procedure SetProgressBar(const Value: TProgressBar);
+    function GetLayoutIdentifier: string;
+    procedure SetLayoutIdentifier(const Value: string);
     { private declarations }
   protected
     constructor Create();
@@ -37,11 +43,12 @@ type
     procedure processLine(ALine: string);
     { protected declarations }
   public
-    class function new(): IControlImporter;
+    class function new(const ALayoutIdentifier: string): IControlImporter;
     function execute(): IControlImporter;
     property FileImport: TStringList read GetFileImport write SetFileImport;
     property ProgressBar: TProgressBar read GetProgressBar write SetProgressBar;
     property LabelStatus: TLabel read GetLabelStatus write SetLabelStatus;
+    property LayoutIdentifier: string read GetLayoutIdentifier write SetLayoutIdentifier;
     { public declarations }
   end;
 
@@ -49,7 +56,7 @@ implementation
 
 uses
   System.Generics.Collections, DAO.LAYOUT, Model.LayoutTemplate, System.Types,
-  System.SysUtils, System.Variants, Vcl.Forms;
+  System.SysUtils, System.Variants, Vcl.Forms, Model.LayoutName;
 
 { TControlImporter }
 
@@ -108,14 +115,20 @@ begin
   Result := FLabelStatus;
 end;
 
+function TControlImporter.GetLayoutIdentifier: string;
+begin
+  Result := FLayoutIdentifier;
+end;
+
 function TControlImporter.GetProgressBar: TProgressBar;
 begin
   Result := FProgressBar;
 end;
 
-class function TControlImporter.new: IControlImporter;
+class function TControlImporter.new(const ALayoutIdentifier: string): IControlImporter;
 begin
   Result := Self.Create;
+  Result.LayoutIdentifier := ALayoutIdentifier;
 end;
 
 procedure TControlImporter.processLine(ALine: string);
@@ -123,11 +136,13 @@ var
   line: TArray<string>;
   layout: TList<IModelLayoutTemplate>;
   I: Integer;
+  layoutInformation: IModelLayoutName;
 begin
   try
     try
-      line := ALine.Trim.Split([';'], None);
-      layout := TDAOLayout.new('SISA').getLayoutTemplate();
+      layoutInformation := TDAOLayout.new(LayoutIdentifier).getLayoutInformation();
+      line := ALine.Trim.Split([layoutInformation.separator], None);
+      layout := TDAOLayout.new(LayoutIdentifier).getLayoutTemplate();
 
       for I := 0 to Length(line) - 1 do
       begin
@@ -136,7 +151,7 @@ begin
         else
           layout[I].fieldValue := line[I];
       end;
-      TDAOLayout.new('SISA').insertRow(layout);
+      TDAOLayout.new(LayoutIdentifier).insertRow(layoutInformation, layout);
     except on E: Exception do
       raise Exception.Create(E.Message);
     end;
@@ -158,6 +173,11 @@ end;
 procedure TControlImporter.SetLabelStatus(const Value: TLabel);
 begin
   FLabelStatus := Value;
+end;
+
+procedure TControlImporter.SetLayoutIdentifier(const Value: string);
+begin
+  FLayoutIdentifier := Value;
 end;
 
 procedure TControlImporter.SetProgressBar(const Value: TProgressBar);

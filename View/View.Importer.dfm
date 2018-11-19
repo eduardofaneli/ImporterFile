@@ -16,34 +16,27 @@ object ViewImporter: TViewImporter
   PixelsPerInch = 96
   TextHeight = 13
   object pnlMain: TPanel
-    Left = 158
+    Left = 237
     Top = 0
-    Width = 522
+    Width = 443
     Height = 433
     Align = alClient
     BevelOuter = bvNone
     Color = clWindow
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 0
-    ExplicitWidth = 630
-    ExplicitHeight = 425
     object cardPanelImporter: TCardPanel
       Left = 0
       Top = 0
-      Width = 522
+      Width = 443
       Height = 433
       Align = alClient
       ActiveCard = cardImporter
       TabOrder = 0
-      ExplicitLeft = 136
-      ExplicitTop = 112
-      ExplicitWidth = 300
-      ExplicitHeight = 200
       object cardNewLayout: TCard
         Left = 1
         Top = 1
-        Width = 520
+        Width = 441
         Height = 431
         CardIndex = 0
         TabOrder = 0
@@ -55,12 +48,13 @@ object ViewImporter: TViewImporter
       object cardListLayout: TCard
         Left = 1
         Top = 1
-        Width = 520
+        Width = 441
         Height = 431
         Caption = 'cardListLayout'
         CardIndex = 1
         TabOrder = 1
         ExplicitLeft = 3
+        ExplicitWidth = 520
         object pnlListLayouts: TPanel
           Left = 0
           Top = 0
@@ -75,7 +69,7 @@ object ViewImporter: TViewImporter
       object cardHome: TCard
         Left = 1
         Top = 1
-        Width = 520
+        Width = 441
         Height = 431
         Caption = 'cardHome'
         CardIndex = 2
@@ -185,27 +179,22 @@ object ViewImporter: TViewImporter
       object cardImporter: TCard
         Left = 1
         Top = 1
-        Width = 520
+        Width = 441
         Height = 431
         CardIndex = 3
         TabOrder = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 185
-        ExplicitHeight = 41
         object gbArquivo: TGroupBox
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 514
+          Width = 435
           Height = 46
           Align = alTop
           Caption = 'Arquivo'
           TabOrder = 0
-          ExplicitWidth = 624
           object btnAbrirArquivo: TSpeedButton
             AlignWithMargins = True
-            Left = 486
+            Left = 407
             Top = 18
             Width = 23
             Height = 23
@@ -219,11 +208,10 @@ object ViewImporter: TViewImporter
             AlignWithMargins = True
             Left = 5
             Top = 18
-            Width = 475
+            Width = 396
             Height = 23
             Align = alClient
             TabOrder = 0
-            ExplicitWidth = 253
             ExplicitHeight = 21
           end
         end
@@ -239,18 +227,17 @@ object ViewImporter: TViewImporter
         object pnlStatus: TPanel
           Left = 0
           Top = 390
-          Width = 520
+          Width = 441
           Height = 41
           Align = alBottom
           BevelOuter = bvNone
           Color = clWindow
           ParentBackground = False
           TabOrder = 2
-          ExplicitLeft = 2
           object lblStatus: TLabel
             Left = 0
             Top = 0
-            Width = 520
+            Width = 441
             Height = 13
             Align = alTop
             Font.Charset = DEFAULT_CHARSET
@@ -264,12 +251,10 @@ object ViewImporter: TViewImporter
           object pbStatus: TProgressBar
             Left = 0
             Top = 13
-            Width = 520
+            Width = 441
             Height = 28
             Align = alClient
             TabOrder = 0
-            ExplicitLeft = 2
-            ExplicitTop = 19
           end
         end
       end
@@ -278,7 +263,7 @@ object ViewImporter: TViewImporter
   object svMenu: TSplitView
     Left = 0
     Top = 0
-    Width = 121
+    Width = 200
     Height = 433
     BorderWidth = 1
     BorderStyle = bsSingle
@@ -289,38 +274,41 @@ object ViewImporter: TViewImporter
     object SpeedButton2: TSpeedButton
       Left = 1
       Top = 65
-      Width = 115
+      Width = 194
       Height = 32
       Align = alTop
       Caption = 'Importer'
       Margin = 2
       OnClick = SpeedButton2Click
       ExplicitTop = 63
+      ExplicitWidth = 115
     end
     object SpeedButton3: TSpeedButton
       Left = 1
       Top = 33
-      Width = 115
+      Width = 194
       Height = 32
       Align = alTop
       Caption = 'Layout list'
       Margin = 2
       OnClick = SpeedButton3Click
       ExplicitTop = 32
+      ExplicitWidth = 115
     end
     object SpeedButton4: TSpeedButton
       Left = 1
       Top = 1
-      Width = 115
+      Width = 194
       Height = 32
       Align = alTop
       Caption = 'Home'
       Margin = 2
       OnClick = SpeedButton4Click
+      ExplicitWidth = 115
     end
   end
   object pnlExpand: TPanel
-    Left = 121
+    Left = 200
     Top = 0
     Width = 37
     Height = 433
